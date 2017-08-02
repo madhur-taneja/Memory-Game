@@ -112,4 +112,17 @@ footer {
 .board {
 	padding-left: 7%;
 }
+
+.timer {
+	margin-left: 4%;
+	width: 46%;
+}
+
+.counter {
+	width: 46%;
+	margin-left: 0;
+	text-align: right;
+	margin-right: 4%;
+ 
+}
 }
