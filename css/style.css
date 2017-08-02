@@ -1,0 +1,115 @@
+.title,
+.tag-line {
+	text-align: center;
+	color: White;
+	-webkit-text-stroke: 2px black;
+}
+
+body {
+	font-family: 'Permanent Marker', cursive;
+	background-image: url(../img/bgi.jpg);
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.container {
+	height: 100%;
+}
+
+.board {
+	/* background-color: grey; */
+	height: 75%;
+	width: 100%;
+}
+
+.flip-container {
+	/* background-color: red; */
+	margin: auto;
+	height:95%;
+	width: 100%;
+}
+
+.fliprow {
+	/* background-color: green; */
+	height: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position:relative;
+	float: left;
+	width: 24%;
+	padding: .1%; 
+	margin: .3%;
+}
+
+.card {
+	border: 3% solid white;
+	height: 100%;
+	width: 100%;
+	border-radius: 5%;
+	margin: 3.5%;
+	padding: 4%;
+}
+
+footer {
+	padding-top: 2.7%;
+}
+
+.timer {
+	padding-left: 2%;
+	width: 50%;
+}
+
+
+/* .rating { */
+	/* display: none; */
+/* } */
+
+.counter {
+	width: 50%;
+	margin-left: 31%;
+	text-align: right;
+ 
+}
+
+
+
+/* entire container, keeps perspective */
+/* flip the pane when hovered */
+.flip-container .flipper:active, .flip-container .flipper.active {
+	transform: rotateY(-180deg);
+}
+
+/* hide back of pane during swap */
+.front {
+	z-index: 1;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	position: relative;
+}
+
+/* back, initially hidden pane */
+.back {
+	z-index: 0;
+	transform: rotateY(-180deg);
+	position: absolute;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+}
+
+
+@media (max-width: 500px) {
+.board {
+	padding-left: 7%;
+}
+}
