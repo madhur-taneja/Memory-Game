@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Including Meta Tags -->
+      <meta charset="UTF-8">
+      <meta name="author" content="Madhur Taneja">
+      <meta name="description" content="Memory Game">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Title of Project -->
+      <title> Memory Game </title>
+      <!-- Linking Animate.Css Library  -->
+      <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <!-- Adding Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+      <!-- Linking Css and Bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <!-- Bootstrap Container, Rows and Columns -->
+      <div class="container">
+         <header class="row row-centered">
+            <h1 class="title col-xs-12 col-sm-12 col-md-12"> FootMatch </h1>
+            <h2 class="tag-line col-xs-12 col-sm-12 col-md-12"> &ldquo;Match the players who have no match&rdquo; </h2>
+         </header>
+         <!-- Main Section -->
+         <section class="board row">
+            <!-- Cards Container -->
+            <div class="flip-container col-9 col-sm-7 col-md-7 col-lg-5 col-xl-5 col-centered">
+               <!-- Start Modal -->
+               <div id="startModal" class="row animated zoomIn">
+                  <div class="startContent col-xs-12 col-sm-12 col-md-12 col-centered">
+                     <div class="animated infinite pulse" id="start">
+                        <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>	
+                        <h3> Start Game </h3>
+                     </div>
+                  </div>
+               </div>
+               <!-- Cards Row -->
+               <div class="fliprow row  animated fadeIn">
+               </div>
+               <!-- Win Modal -->
+               <div id="winModal" class="row animated flip">
+                  <div class="winContent col-xs-12 col-sm-12 col-md-12 col-centered">
+                     <div class="">
+                        <h1> You Won! </h1>
+                        <h3> Score: <span class="score">  </span> </h3>
+                        <a class="animated infinite pulse" onclick="window.location.reload()">
+                           <i class="fa fa-repeat fa-4x" aria-hidden="true"></i>	
+                           <h3> Play Again </h3>
+                        </a>
+                        <!-- Stars Counter -->
+                        <div class="stars">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <footer class="row">
+         <!-- Time Counter -->
+         <div class="timer col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <h3 class="fs">Time:&nbsp;<span id="time"> 0 </span> Sec(s) </h3>
+         </div>
+         <!-- Moves Counter -->
+         <div class="counter col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <h3 class="fs">Moves: <span id="moves" class="data"> 0 </span></h3>
+         </div>
+      </footer>
+      <!-- Linking Fonts Awesome -->
+      <script src="https://use.fontawesome.com/c7ee18e47e.js"></script>
+      <!-- Linking jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Linking Javascript Files -->
+      <script src="js/engine.js"></script>
+   </body>
+</html>
