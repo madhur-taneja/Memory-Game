@@ -1,18 +1,23 @@
 /* CSS for HTML */
+
 html {
 	height: 100%;
 }
 
+
 /* CSS for Body */
+
 body {
 	font-family: 'Permanent Marker', cursive;
 	background-image: url(../img/bgi.jpg);
 	background-size: 100% 100%;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	overflow: hidden;
 }
 
+
 /* CSS for Header */
+
 .title,
 .tag-line {
 	text-align: center;
@@ -20,19 +25,23 @@ body {
 	-webkit-text-stroke: 2px black;
 }
 
+
 /* CSS for Container */
+
 .container {
 	height: 100%;
 }
 
+
 /* CSS for Board and it's Contents*/
+
 .board {
-	height: 100%%;	
+	height: 100%%;
 }
 
 .flip-container {
 	margin: auto;
-	height:100%;
+	height: 100%;
 	width: 100%;
 }
 
@@ -43,13 +52,14 @@ body {
 }
 
 .flipper {
-	transition: 0.6s; /* flip speed goes here */
+	transition: 0.6s;
+	/* flip speed goes here */
 	transform-style: preserve-3d;
-	position:relative;
+	position: relative;
 	float: left;
 	height: 24%;
 	width: 24%;
-	padding: .1%; 
+	padding: .1%;
 	margin: .3%;
 }
 
@@ -62,31 +72,34 @@ body {
 	padding: 4%;
 }
 
+
 /* CSS for Footer and its Contents */
+
 .counter {
 	text-align: right;
 }
 
+
 /* The START Modal (cover) */
+
 #startModal {
 	z-index: 3;
 	overflow: hidden;
 	height: 77vh;
 }
 
-
 .startContent {
-	 background: url(../img/start.jpg);
-	 background-size: 100% 100%;
-     background-repeat: no-repeat;
-	 position: absolute;
-     margin: auto;
-     padding-top: 10vh;
-     border: 1px solid #888;
-	 height: 100%;
-	 width: 100%;
-	 text-align: center;
-	 color: white;
+	background: url(../img/start.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	margin: auto;
+	padding-top: 10vh;
+	border: 1px solid #888;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	color: white;
 }
 
 #start {
@@ -96,37 +109,50 @@ body {
 
 
 /* The WIN Modal (background) */
+
 #winModal {
-     display: none; /* Hidden by default */
-     overflow: hidden; /* Enable scroll if needed */
-	 z-index: -1;
-	 height: 77vh;
+	display: none;
+	/* Hidden by default */
+	overflow: hidden;
+	/* Enable scroll if needed */
+	z-index: -1;
+	height: 77vh;
 }
 
-/* Modal Content/Box */
-.winContent {
-	 overflow: hidden;
-	 position: absolute;
-     margin: auto;
-     padding-top: 10vh;
-	 height: 100%;
-	 width: 100%;
-	 text-align: center;
- }
 
- .stars {
+/* Modal Content/Box */
+
+.winContent {
+	overflow: hidden;
+	position: absolute;
+	margin: auto;
+	padding-top: 10vh;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.stars {
 	color: #FFD700;
 }
 
+
 /* CSS for Flipping the Flip-Container */
 
+
 /* entire container, keeps perspective */
+
+
 /* flip the pane when hovered */
-.flip-container .flipper:active, .flip-container .flipper.active {
+
+.flip-container .flipper:active,
+.flip-container .flipper.active {
 	transform: rotateY(-180deg);
 }
 
+
 /* hide back of pane during swap */
+
 .front {
 	z-index: 1;
 	/* for firefox 31 */
@@ -134,74 +160,75 @@ body {
 	position: relative;
 }
 
+
 /* back, initially hidden pane */
+
 .back {
 	z-index: 0;
 	transform: rotateY(-180deg);
 	position: absolute;
 }
 
+
 /* hide back of pane during swap */
-.front, .back {
+
+.front,
+.back {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	top: 0;
 	left: 0;
 }
 
+
 /* Media Queries for different screen sizes */
-@media (min-width: 1200px) { 
-	 .title, 
-	 .tag-line {
-		 font-size: 35px;
-	 } 
-	 .timer 
-	 { 
-		padding-left: 3% !important; 
-	 }
-} 
-@media (min-width: 992px) {
-	.timer
-	{
+
+@media (min-width: 1200px) {
+	.title,
+	.tag-line {
+		font-size: 35px;
+	}
+	.timer {
 		padding-left: 3% !important;
 	}
-	.counter
-	{
+}
+
+@media (min-width: 992px) {
+	.timer {
+		padding-left: 3% !important;
+	}
+	.counter {
 		padding-right: 3% !important;
 	}
 }
-	
+
 @media (max-width: 768px) {
 	.title,
 	.tag-line {
 		font-size: 25px;
 	}
-	.timer
-	{
+	.timer {
 		padding-left: 3% !important;
 	}
-	.counter
-	{
+	.counter {
 		padding-right: 3% !important;
 	}
 }
 
 @media (max-width: 576px) {
 	.title,
-.tag-line {
+	.tag-line {
 		font-size: 20px;
 	}
 	.timer {
 		width: 50% !important;
 		padding-left: 6% !important;
 	}
-	.counter
-	{
+	.counter {
 		width: 50% !important;
 		padding-right: 4% !important;
 	}
 	.fs {
 		font-size: 16px !important;
 	}
-	
 }
