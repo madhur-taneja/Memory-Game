@@ -1,7 +1,7 @@
 # Memory Game
 
-Open and view the Project using the `.zip` file provided or at my [Github Repository](https://github.com/madhur-taneja/Memory-Game).
-The Game is also hosted on [Github](https://madhur-taneja.github.io/Memory-Game/).
+* Open and view the Project using the `.zip` file provided or at my [Github Repository](https://github.com/madhur-taneja/Memory-Game).
+* The Game is also hosted on [Github](https://madhur-taneja.github.io/Memory-Game/).
 
 ## Getting started
 
