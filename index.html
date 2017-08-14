@@ -26,13 +26,13 @@
          <!-- Main Section -->
          <section class="board row">
             <!-- Cards Container -->
-            <div class="flip-container col-9 col-sm-7 col-md-7 col-lg-5 col-xl-5 col-centered">
+            <div class="flip-container col-9 col-sm-8 col-md-7 col-lg-5 col-xl-5 col-centered">
                <!-- Start Modal -->
                <div id="startModal" class="row animated zoomIn">
                   <div class="startContent col-xs-12 col-sm-12 col-md-12 col-centered">
                      <div class="animated infinite pulse" id="start">
-                        <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>	
-                        <h3> Start Game </h3>
+                        <i class="fs fa fa-play-circle-o fa-2x" aria-hidden="true"></i>	
+                        <h3 class="fs"> Start Game </h3>
                      </div>
                   </div>
                </div>
@@ -45,12 +45,16 @@
                      <div class="">
                         <h1> You Won! </h1>
                         <h3> Score: <span class="score">  </span> </h3>
-                        <a class="animated infinite pulse" onclick="window.location.reload()">
+                        <div class="animated infinite pulse" onclick="window.location.reload()">
                            <i class="fa fa-repeat fa-4x" aria-hidden="true"></i>	
                            <h3> Play Again </h3>
-                        </a>
+                        </div>
                         <!-- Stars Counter -->
-                        <div class="stars">
+                        <div class="starsW">
+                        </div>
+                        <!-- Time Counter -->
+                        <div class="timer">
+                           <h3 class="fs">Time:&nbsp;<span id="timeW"> 0 </span> Sec(s) </h3>
                         </div>
                      </div>
                   </div>
@@ -58,13 +62,22 @@
             </div>
          </section>
       </div>
-      <footer class="row">
+      <footer class="row foot">
          <!-- Time Counter -->
-         <div class="timer col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-            <h3 class="fs">Time:&nbsp;<span id="time"> 0 </span> Sec(s) </h3>
+         <div class="timer col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-centered">
+            <h3 class="fs">Time:&nbsp;<span id="timeB"> 0 </span></h3>
+         </div>
+         <!-- Stars Counter -->
+         <div class="rating col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-centered">
+            <h3 class="fs">Rating:&nbsp;<span class="starsB"></span></h3>
+         </div>
+         <!-- Refresh Game -->
+         <div class="refresh col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-centered" onclick="resetGame()">
+            <h3 class="fs">
+            Restart: <i class="fa fa-refresh" aria-hidden="true"></i>
          </div>
          <!-- Moves Counter -->
-         <div class="counter col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+         <div class="counter col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
             <h3 class="fs">Moves: <span id="moves" class="data"> 0 </span></h3>
          </div>
       </footer>

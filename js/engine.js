@@ -1,5 +1,4 @@
 // -----M-O-D-E-L----- //
-
 var players = [{
         name: "Lionel Messi",
         image: "img/lm10.jpg",
@@ -94,6 +93,7 @@ var startGame = function() {
     setTimeout(function() {
         $('#startModal').hide();
         $('.fliprow').show();
+        $('.foot').show().css('display', 'flex');
         runGame();
     }, 100);
 
@@ -101,7 +101,7 @@ var startGame = function() {
 
 // Function to Run the Game
 var runGame = function() {
-
+	
     // Function to shuffle the Array of players 
     function shuffleArray(players) {
         for (var i = players.length - 1; i > 0; i--) {
@@ -120,7 +120,7 @@ var runGame = function() {
     function createCards(players) {
         var allCards = ' ';
         for (var i = 0; i < players.length; i++) {
-            allCards = allCards + '<div class="flipper animated col-offset-7 col-sm-offset-6 col-md-offset-5 col-lg-offset-4 col-xl-offset-3" id="' + i + '"><div class="front"><img src="img/cover.jpg" class="img-responsive card"/></div><div class="back"><img src="' + players[i].image + '" class="img-responsive card"/></div></div>';
+            allCards = allCards + '<div class="flipper animated col-offset-3 col-sm-offset-6 col-md-offset-5 col-lg-offset-4 col-xl-offset-3" id="' + i + '"><div class="front"><img src="img/cover.jpg" class="img-responsive card"/></div><div class="back"><img src="' + players[i].image + '" class="img-responsive card"/></div></div>';
         }
         // Appending Cards in fliprow
         $(".fliprow").html(allCards);
@@ -128,6 +128,29 @@ var runGame = function() {
 
     // Function Call
     createCards(players);
+
+    // Function to set rating on game board
+    function setRating() {
+        // Assigning Stars according to number of moves
+        if (moves <= 12) {
+            var stars = '<i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>';
+        } else if (moves <= 14) {
+            var stars = '<i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-half-o" aria-hidden="true"></i>';
+        } else if (moves <= 16) {
+            var stars = '<i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i>';
+        } else if (moves <= 18) {
+            var stars = '<i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-half-o" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i>';
+        } else if (moves <= 20) {
+            var stars = '<i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i>';
+        } else {
+            var stars = '<i class="fa fa-star-half-o" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i>';
+        }
+        // Appending Stars
+        $('.starsB').html(stars);
+    }
+
+    // Function call
+    setRating();
 
     // Function to flip the Cards by toggling 'active' class
     function flipCard(self) {
@@ -137,7 +160,7 @@ var runGame = function() {
     // Initializing an interval function to update time at every 1 second.
     timer = setInterval(function() {
         timeElapsed += 1;
-        $('#time').html(" " + timeElapsed);
+        $('#timeB').html(" " + timeElapsed);
     }, 1000);
 
     // Calling matchCards function on clicking of a flipper
@@ -158,6 +181,8 @@ var runGame = function() {
         if (count % 2 == 0) {
             moves = count / 2;
             $("#moves").html(moves);
+            // Function call to set stars as number of moves changes
+            setRating();
         }
 
         // Pushing values in Array if less than 2 Cards are open
@@ -207,6 +232,29 @@ var runGame = function() {
 
 };
 
+// Function to restart the game by resetting the game board
+var resetGame = function() {
+    // Resetting all the variables 
+	count = 0;
+	pair = 0;
+	hasSrc = [];
+    hasId = [];
+    moves = 0;
+    $("#moves").html(moves);
+    // Resetting time Elapsed 
+    clearInterval(timer);
+	timeElapsed = 0;
+    $('#time').html(" " + timeElapsed);
+    // Showing startModal and hiding others
+    setTimeout(function() {
+        $('#winModal').hide();
+        $('#startModal').hide();
+        $('.fliprow').show();
+        $('.foot').show().css('display', 'flex');
+    }, 100);
+    runGame();
+}
+
 // Function to End the Game
 var endGame = function() {
 
@@ -230,9 +278,11 @@ var endGame = function() {
     } else {
         var stars = '<i class="fa fa-star-half-o fa-4x" aria-hidden="true"></i> <i class="fa fa-star-o fa-4x" aria-hidden="true"></i> <i class="fa fa-star-o fa-4x" aria-hidden="true"></i>';
     }
-
     // Appending Stars
-    $('.stars').html(stars);
+    $('.starsW').html(stars);
+
+    // Appending Time Taken
+    $('#timeW').html(" " + timeElapsed);
 
     // Stopping Clock
     clearInterval(timer);
@@ -240,6 +290,7 @@ var endGame = function() {
     //setTimeout function to Show and Hide the Modal
     setTimeout(function() {
         $('.fliprow').hide();
+        $('.foot').hide();
         $('#winModal').show();
 
     }, 100);
