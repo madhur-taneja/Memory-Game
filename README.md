@@ -1,6 +1,6 @@
 # Memory Game
 
-The Memory Game consists of 16 cards arranged randomly in a grid. The deck is made up of 8 pairs of cards, each with different players on one side. Match the same players by flipping the cards in minimum amount of moves and time for a higher score and rating.
+A single page web app consisting of 16 cards arranged randomly in a grid. The deck is made up of 8 pairs of cards, each with different players on one side. Match the same players by flipping the cards in minimum amount of moves and time for a higher score and rating.
 
 Open and view the Project using the `.zip` file provided or at my [Github Repository](https://github.com/madhur-taneja/Memory-Game).
 
@@ -11,15 +11,15 @@ The Game is also hosted on [Github](https://madhur-taneja.github.io/Memory-Game/
 - [Getting Started](#getting-started)
   - [Instructions](#instructions)
   - [Tools Required](#tools-required)
-- [Running the App](#running-the-app)
 - [Development](#development)
+- [Running the App](#running-the-app)
 - [References](#references)
 
 ## Getting Started
 
 This Project is all about demonstrating my mastery of HTML, CSS, and JavaScript. I built a complete browser-based card matching game (also known as Concentration).
 
-This project was built from scratch and is a part of Udacity's Front-End Web Developer Nanodegree program. The project will be evaluated by a Udacity code reviewer according to the Landing Page project [rubric](https://review.udacity.com/#!/rubrics/591/view)
+This project was built from scratch and is a part of Udacity's Front-End Web Developer Nanodegree program. The project will be evaluated by a Udacity code reviewer according to the project [rubric](https://review.udacity.com/#!/rubrics/591/view)
 
 Udacity also provides the starter code for this project which can be found [here](https://github.com/udacity/fend-project-memory-game)
 
@@ -52,12 +52,6 @@ The game ends once all cards have been correctly matched.
 * [Fonts Awesome](http://fontawesome.io/) to add Icons.
 * [Animate.css](https://daneden.github.io/animate.css/) to animate CSS.
 
-## Running the App
-* Open the project through the `.zip` file provided and extract file.
-  > Open `index.html` from the root directory
-* Click on start icon to play the game and get ratings(score and stars) for your performance.
-* Restart the game with the reset button at the bottom of the screen or in the results modal after completing the game
-
 ## Development
 
 * Create `index.html` with following markup:
@@ -83,6 +77,12 @@ The game ends once all cards have been correctly matched.
     * `endGame` to end the game and display the results in a modal
   
  For details now how these functionalities have been implemented, refer the source code.
+
+## Running the App
+* Open the project through the `.zip` file provided and extract file.
+  > Open `index.html` from the root directory in the browser of your choice.
+* Click on start icon to play the game and get ratings(score and stars) for your performance.
+* Restart the game with the reset button at the bottom of the screen or in the results modal after completing the game
 
 ## Screenshots
 
